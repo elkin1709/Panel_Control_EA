@@ -1,0 +1,157 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Contenedor principal y panel */
+.main-panel {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 32px 24px 24px 24px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 800;
+}
+
+/* 3. Tarjetas de sensores */
+.sensors-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+.sensor-card {
+    flex: 1 1 0;
+    min-width: 180px;
+    max-width: 240px;
+    background: #f3f4f6;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0 24px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0;
+    transition: background 0.3s;
+}
+.sensor-card.temp { background: #ef4444; }
+.sensor-card.hum { background: #22c55e; }
+.sensor-card.pres { background: #a21caf; }
+.sensor-card .label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 8px;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+/* 4. Botones principales */
+.buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+.btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 32px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: background 0.2s, color 0.2s;
+}
+.btn.fetch { background: #6366f1; color: #fff; }
+.btn.save { background: #374151; color: #fff; }
+.btn.clear { background: #ef4444; color: #fff; }
+.btn:hover { filter: brightness(0.95); }
+
+/* 5. Registro de eventos y alertas */
+.event-log-panel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 18px 24px 18px 24px;
+    margin: 0 auto;
+    max-width: 700px;
+}
+.event-log-title {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+#event-log {
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 12px 8px;
+    max-height: 220px;
+    overflow-y: auto;
+    font-size: 1rem;
+    font-family: 'Inter', monospace, sans-serif;
+}
+#event-log p {
+    margin: 0 0 4px 0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+.bg-red-100 { background: #fee2e2 !important; }
+.text-red-700 { color: #b91c1c !important; }
+.font-semibold { font-weight: 600 !important; }
+.bg-green-100 { background: #d1fae5 !important; }
+.text-green-700 { color: #047857 !important; }
+.bg-blue-100 { background: #dbeafe !important; }
+.text-blue-700 { color: #1e40af !important; }
+.text-gray-700 { color: #374151 !important; }
+
+/* 6. Caja de mensajes */
+.message-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fef2f2; /* Red-100 */
+    border: 1px solid #ef4444; /* Red-500 */
+    color: #b91c1c; /* Red-700 */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+.border-green-500 { border-color: #22c55e !important; }
+.border-red-500 { border-color: #ef4444 !important; }
+.border-blue-500 { border-color: #3b82f6 !important; }
+
+/* 7. Animaciones */
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(255, 0, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
+.animate-pulse-red {
+    animation: pulse-red 1.5s infinite;
+}
+
+/* Utilidades */
+.mb-1 { margin-bottom: 4px !important; }
+.p-1 { padding: 4px !important; }
+.rounded { border-radius: 6px !important; }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control de Sensores IoT Simulado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="message-box" id="messageBox"></div>
+
+    <div class="main-panel">
+        <h1>Panel de Control de Sensores<br>IoT</h1>
+
+        
+        <div class="sensors-row">
+            <div class="sensor-card temp" id="temp-card">
+                <div id="temperature">--°C</div>
+                <div class="label">Temperatura</div>
+            </div>
+            
+            <div class="sensor-card hum">
+                <div id="humidity">--%</div>
+                <div class="label">Humedad</div>
+            </div>
+            
+            <div class="sensor-card pres">
+                <div id="pressure">-- hPa</div>
+                <div class="label">Presión</div>
+            </div>
+        </div>
+
+        
+        <div class="buttons-row">
+            <button id="fetch-data-btn" class="btn fetch">Obtener Datos de Sensores</button>
+            <button id="save-data-btn" class="btn save">Guardar Datos (Local Storage)</button>
+            <button id="clear-data-btn" class="btn clear">Limpiar Datos Guardados</button>
+        </div>
+
+       
+        <div class="event-log-panel">
+            <div class="event-log-title">Registro de Eventos y Alertas</div>
+            <div id="event-log">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
